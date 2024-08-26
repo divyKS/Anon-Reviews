@@ -46,7 +46,7 @@ export async function POST(req: NextRequest){
 
         // sending verification email
         const emailResponse = await sendVerificationEmail(email, username, verifyCode)
-        console.log("Email response - " + emailResponse)
+        console.log("Email response - " , emailResponse)
 
         if(!emailResponse.success){
             return NextResponse.json({success: false, message: emailResponse.message}, {status: 400})

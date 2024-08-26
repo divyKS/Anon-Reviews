@@ -72,6 +72,8 @@ export const authOptions: NextAuthOptions = {
     },
     pages: {
         // the things that we want to override
+        // so that our route isn't the default api/auth/signin
+        // now it is api/signin
         signIn: "/signin"
     },
     session: {
