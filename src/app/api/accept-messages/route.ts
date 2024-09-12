@@ -23,7 +23,7 @@ export async function POST(req: Request){
     const {acceptMessages} = await req.json() // from the frontend, we will get the toggle from the frontend request
 
     try {
-        const updatedUser = await UserModel.findByIdAndUpdate(userId, {isAcceptingMessage: acceptMessages}, {new: true}) // new true returns us the user with updated values
+        const updatedUser = await UserModel.findByIdAndUpdate(userId, {isAcceptingMessages: acceptMessages}, {new: true}) // new true returns us the user with updated values
         
         if(!updatedUser){
             return Response.json({success: false, message: "failed to update user status to accept messages"}, {status: 401})

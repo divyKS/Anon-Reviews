@@ -48,7 +48,7 @@ export async function GET(req: NextRequest){
             return Response.json({success: false, message: "Username has been already taken"}, {status: 400})
         }
         
-        return Response.json({success: true, message: "Username is available"}, {status: 400})
+        return Response.json({success: true, message: "Username is available"}, {status: 200})
         
     } catch (error) {
         console.log("error checking uniqueness of username ", error)
